@@ -463,108 +463,113 @@
                 "additionalProperties": false
               },
               "limit": {
-  "type": "object",
-  "properties": {
-    "context": {
-      "type": "number",
-      "minimum": 0,
-      "maximum": 999999999999999
-    },
-    "input": {
-      "type": "number",
-      "minimum": 0,
-      "maximum": 999999999999999
-    },
-    "output": {
-      "type": "number",
-      "minimum": 0,
-      "maximum": 999999999999999
-    }
-  },
-  "required": [
-    "context",
-    "output"
-  ],
-  "additionalProperties": false
-},
-"modalities": {
-  "type": "object",
-  "properties": {
-    "input": {
-      "type": "array",
-      "items": {
-        "type": "string",
-        "enum": [
-          "text",
-          "audio",
-          "image",
-          "video",
-          "pdf"
-        ]
+                "type": "object",
+                "properties": {
+                  "context": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 999999999999999
+                  },
+                  "input": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 999999999999999
+                  },
+                  "output": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 999999999999999
+                  }
+                },
+                "required": [
+                  "context",
+                  "output"
+                ],
+                "additionalProperties": false
+              },
+              "modalities": {
+                "type": "object",
+                "properties": {
+                  "input": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "enum": [
+                        "text",
+                        "audio",
+                        "image",
+                        "video",
+                        "pdf"
+                      ]
+                    }
+                  },
+                  "output": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "enum": [
+                        "text",
+                        "audio",
+                        "image",
+                        "video",
+                        "pdf"
+                      ]
+                    }
+                  }
+                },
+                "additionalProperties": false
+              },
+              "experimental": {
+                "type": "boolean"
+              },
+              "status": {
+                "type": "string",
+                "enum": [
+                  "alpha",
+                  "beta",
+                  "deprecated",
+                  "active"
+                ]
+              },
+              "provider": {
+                "type": "object",
+                "properties": {
+                  "npm": {
+                    "type": "string"
+                  },
+                  "api": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": false
+              },
+              "options": {
+                "type": "object"
+              },
+              "headers": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "string"
+                }
+              },
+              "variants": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "object",
+                  "properties": {
+                    "disabled": {
+                      "type": "boolean",
+                      "description": "Disable this variant for the model"
+                    }
+                  }
+                },
+                "description": "Variant-specific configuration"
+              }
+            }
+          }
+        }
       }
     },
-    "output": {
-      "type": "array",
-      "items": {
-        "type": "string",
-        "enum": [
-          "text",
-          "audio",
-          "image",
-          "video",
-          "pdf"
-        ]
-      }
-    }
-  },
-  "additionalProperties": false
-},
-"experimental": {
-  "type": "boolean"
-},
-"status": {
-  "type": "string",
-  "enum": [
-    "alpha",
-    "beta",
-    "deprecated",
-    "active"
-  ]
-},
-"provider": {
-  "type": "object",
-  "properties": {
-    "npm": {
-      "type": "string"
-    },
-    "api": {
-      "type": "string"
-    }
-  },
-  "additionalProperties": false
-},
-"options": {
-  "type": "object"
-},
-"headers": {
-  "type": "object",
-  "additionalProperties": {
-    "type": "string"
-  }
-},
-"variants": {
-  "type": "object",
-  "additionalProperties": {
-    "type": "object",
-    "properties": {
-      "disabled": {
-        "type": "boolean",
-        "description": "Disable this variant for the model"
-      }
-    }
-  },
-  "description": "Variant-specific configuration"
-}
     "McpLocalConfig": {
       "type": "object",
       "properties": {
